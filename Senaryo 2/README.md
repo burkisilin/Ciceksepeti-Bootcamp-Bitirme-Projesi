@@ -306,6 +306,7 @@ pm.test("Request Body Valid", () =>{
     pm.expect(validateEmail(email) && validatePassword(password)).to.be.true;
 });
 ```
+Request Body'de bulunan; email'in String cinsinden, password'un String cinsinden ve email-password değerlerinin geçerli olup olmadığının kontrolü sağlanmıştır.
 
 - Response Body Types are Valid
 ```javascript
@@ -315,6 +316,7 @@ pm.test("Response Body Types are Valid", () =>{
     pm.expect(typeof(jsonData.error) == "string").to.be.true;
 });
 ```
+Response Body'de bulunan; statusCode'nin number cinsinden, message'nin string cinsinden, error'un string cinsinden olup olmadığınının kontrolü sağlanmıştır.
 
 - Unsuccessful Sign Up
 ```javascript
@@ -324,6 +326,9 @@ pm.test('Unsuccessful Sign Up', () =>{
     pm.expect(pm.response.text()).to.not.include("access_token")
 });
 ```
+Dönen Responsede;
+"User already exist!", "Conflict" değerlerinin bulunduğu,
+"access_token" değerinin bulunmadığı test edilmiştir
 
 - Status Code is 409
 ```javascript
@@ -331,3 +336,4 @@ pm.test('Status Code is 409', () =>{
     pm.expect(pm.response.code).equal(409,'Status received is ' + pm.response.code); // Respopnse code must be 409 due to Swagger API Documentation.
 });
 ```
+Response kodunun 409 olup olmadığı kontrol edilmiştir.
