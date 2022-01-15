@@ -17,7 +17,14 @@ Projenin ayağa kalması için Postman ve aşağıdaki görselde paylaşılan En
 
 Testler
 - Response Body is Valid
-![image](https://user-images.githubusercontent.com/13181041/149616692-91d2570f-0d52-4243-9e3c-2f1d8a6c6bb4.png)
+```
+pm.test("Request Body is Valid", () =>{
+    
+    pm.expect(typeof(email) == "string").to.be.true;
+    pm.expect(typeof(password) == "string").to.be.true;
+    pm.expect(validateEmail(email)).equal(true,"Email is not valid. "); // Check if email is valid.
+});
+```
 
 Request Body'de bulunan;
 
@@ -28,8 +35,12 @@ validateEmail fonksiyonu ile email'in geçerli bir email olup olmadığının ko
 
 
 - Signed Up Succesfully
-![image](https://user-images.githubusercontent.com/13181041/149616769-b2396364-991c-4e2d-b77c-ebb78d9fd808.png)
-
+```
+pm.test('Signed Up Successfully.', () =>{
+pm.expect(typeof(jsonData.access_token) == "string").to.be.true
+pm.expect(jsonData.access_token.length).to.be.equal(175)
+});
+```
 
 Response Body'de bulunan;
 
@@ -39,7 +50,11 @@ access_token değerinin 175 karakter içerip içermediğinin kontrolü sağlanm�
 
 
 - Status Code is 200
-![image](https://user-images.githubusercontent.com/13181041/149616811-d009fceb-40ba-4a2b-a2ce-97edc7750eaa.png)
+```
+pm.test('Status code', () =>{
+    pm.expect(pm.response.code).equal(200,'Status received is ' + pm.response.code + '. User successfully signed-up -> Response code must be 200 due to Swagger API Documentation. '); // user successfully signed-up -> Response code must be 200 due to Swagger API Documentation. 
+});
+```
 Response kodunun 200 olup olmadığı kontrol edilmiştir. Swagger üzerinde belirtildiği üzere 200 kodu beklenirken 201 kodunun dönmesi üzerine test fail olmaktadır.
 
 
