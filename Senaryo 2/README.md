@@ -107,3 +107,41 @@ pm.test('Status Code is 200', () =>{
 
 Response kodunun 200 olup olmadığı kontrol edilmiştir. Swagger üzerinde belirtildiği üzere 200 kodu beklenirken 201 kodunun dönmesi üzerine test fail olmaktadır.
 
+# Sign In Fail - Wrong Credentials
+![image](https://user-images.githubusercontent.com/13181041/149618932-8f0ea5ad-108d-4a6b-b3a5-3b0dc7cc1622.png)
+
+- Request Body Types are Valid
+```javascript
+pm.test("Request Body Types are Valid", () =>{
+    pm.expect(typeof(email) == "string").to.be.true;
+    pm.expect(typeof(password) == "string").to.be.true;
+});
+```
+- Response Body Types are Valid
+```javascript
+pm.test("Response Body Types are Valid", () =>{
+    pm.expect(typeof(jsonData.statusCode) == "number").to.be.true
+    pm.expect(typeof(jsonData.message) == "string").to.be.true
+});
+```
+
+- Unsuccessful Sign In
+```javascript
+pm.test('Unsuccessful Sign In', () =>{
+    pm.expect(pm.response.text()).to.include("Unauthorized")
+    pm.expect(pm.response.text()).to.not.include("access_token")
+});
+```
+
+- Status Code is 401
+```javascript
+pm.test('Status Code is 401', () =>{
+    pm.expect(pm.response.code).equal(401,'Status received is ' + pm.response.code); // Response code must be 401 due to Swagger API Documentation. 
+});
+```
+
+
+
+
+```javascript
+```
