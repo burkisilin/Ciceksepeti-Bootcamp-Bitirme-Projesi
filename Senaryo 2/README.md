@@ -110,6 +110,14 @@ Response kodunun 200 olup olmadığı kontrol edilmiştir. Swagger üzerinde bel
 # Sign In Fail - Wrong Credentials
 ![image](https://user-images.githubusercontent.com/13181041/149618932-8f0ea5ad-108d-4a6b-b3a5-3b0dc7cc1622.png)
 
+Giriş bilgileri body üzerinden yanlış set edilmiştir. 
+```javascript
+{
+  "email": "wrongMail",
+  "password": "wrongPassword"
+}
+```
+
 - Request Body Types are Valid
 ```javascript
 pm.test("Request Body Types are Valid", () =>{
