@@ -51,10 +51,40 @@ access_token değerinin 175 karakter içerip içermediğinin kontrolü sağlanm�
 
 - Status Code is 200
 ```
-pm.test('Status code', () =>{
+pm.test('Status Code is 200', () =>{
     pm.expect(pm.response.code).equal(200,'Status received is ' + pm.response.code + '. User successfully signed-up -> Response code must be 200 due to Swagger API Documentation. '); // user successfully signed-up -> Response code must be 200 due to Swagger API Documentation. 
 });
 ```
 Response kodunun 200 olup olmadığı kontrol edilmiştir. Swagger üzerinde belirtildiği üzere 200 kodu beklenirken 201 kodunun dönmesi üzerine test fail olmaktadır.
 
 # Sign In Success
+![image](https://user-images.githubusercontent.com/13181041/149617747-8c976763-b27e-47d3-941b-ccf86adba97d.png)
+
+Pre-request Script üzerinden sistemde kayıtlı bir mail ve password değeri Environment üzerine set edilir.
+
+
+- Request Body Types are Valid
+```
+pm.test("Request Body Types are Valid", () =>{
+    pm.expect(typeof(email) == "string").to.be.true;
+    pm.expect(typeof(password) == "string").to.be.true;
+});
+```
+- Response Body Types are Valid
+```
+pm.test("Response Body Types are Valid", () =>{
+    pm.expect(typeof(jsonData.access_token) == "string").to.be.true
+});
+```
+- Signed In Successfully
+```
+    pm.expect(pm.response.text()).to.include("access_token")
+    pm.expect(jsonData.access_token.length).to.be.equal(175)
+});
+```
+- Status Code is 200
+```
+pm.test('Status Code is 200', () =>{
+    pm.expect(pm.response.code).equal(200,'Status received is ' + pm.response.code + '. User successfully signed-up -> Response code must be 200 due to Swagger API Documentation. '); // user successfully signed-up -> Response code must be 200 due to Swagger API Documentation. 
+});
+```
