@@ -117,6 +117,11 @@ pm.test("Request Body Types are Valid", () =>{
     pm.expect(typeof(password) == "string").to.be.true;
 });
 ```
+Request Body'de bulunan;
+
+email'in String cinsinden olup olmadığının kontrolü, 
+password'un String cinsinden olup olmadığının kontrolü sağlanmıştır.
+
 - Response Body Types are Valid
 ```javascript
 pm.test("Response Body Types are Valid", () =>{
@@ -132,6 +137,9 @@ pm.test('Unsuccessful Sign In', () =>{
     pm.expect(pm.response.text()).to.not.include("access_token")
 });
 ```
+Response Body'de;
+Unauthorized kısmının bulunduğu,
+acces_token'in bulunmadığı kontrol edilmiştir.
 
 - Status Code is 401
 ```javascript
@@ -139,7 +147,7 @@ pm.test('Status Code is 401', () =>{
     pm.expect(pm.response.code).equal(401,'Status received is ' + pm.response.code); // Response code must be 401 due to Swagger API Documentation. 
 });
 ```
-
+Response kodunun 401 olup olmadığı kontrol edilmiştir. 
 
 
 
