@@ -287,8 +287,45 @@ pm.test('Status Code is 400', () =>{
 });
 ```
 Response kodunun 400 olup olmadığı kontrol edilmiştir.
-```javascript
+
+# Sign Up Fail - User Already Signed-Up
+
+Daha önceden sisteme kayıtlı email adresi Pre-request Script kısmında aşağıdaki gibi ayarlanmıştır.
+```json
+pm.environment.set("email", "deneme@db.com")
+pm.environment.set("password", "12345678")
 ```
 
+- Request Body Valid
 ```javascript
+pm.test("Request Body Valid", () =>{
+    pm.expect(typeof(email) == "string").to.be.true;
+    pm.expect(typeof(password) == "string").to.be.true;
+    pm.expect(validateEmail(email) && validatePassword(password)).to.be.true;
+});
+```
+
+- Response Body Types are Valid
+```javascript
+pm.test("Response Body Types are Valid", () =>{
+    pm.expect(typeof(jsonData.statusCode) == "number").to.be.true;
+    pm.expect(typeof(jsonData.message) == "string").to.be.true;
+    pm.expect(typeof(jsonData.error) == "string").to.be.true;
+});
+```
+
+- Unsuccessful Sign Up
+```javascript
+pm.test('Unsuccessful Sign Up', () =>{
+    pm.expect(pm.response.text()).to.include("User already exist!")
+    pm.expect(pm.response.text()).to.include("Conflict")
+    pm.expect(pm.response.text()).to.not.include("access_token")
+});
+```
+
+- Status Code is 409
+```javascript
+pm.test('Status Code is 409', () =>{
+    pm.expect(pm.response.code).equal(409,'Status received is ' + pm.response.code); // Respopnse code must be 409 due to Swagger API Documentation.
+});
 ```
