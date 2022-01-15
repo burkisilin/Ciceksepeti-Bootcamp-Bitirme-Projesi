@@ -157,8 +157,81 @@ pm.test('Status Code is 401', () =>{
 ```
 Response kodunun 401 olup olmadığı kontrol edilmiştir. 
 
+```javascript
+function randomStringGenerator(length){
+    var charset = 'abcdefghkmnpqrstuvwxyz23456789';
+    return new Array(length)
+      .fill(null)
+      .map(()=> charset.charAt(Math.floor(Math.random() * charset.length)))
+      .join('');
+
+}
+
+function setRequestBody(emailField,passwordField)
+{
+    switch (emailField)
+    {
+        case "validEmail":
+            email = randomStringGenerator(3) + "@" +randomStringGenerator(5)+ ".com"
+            break
+        case "invalidEmail":
+            email = randomStringGenerator(6) + ".com"
+            break
+        case "emptyEmail":
+            email = ""
+            break
+    }
+
+        switch (passwordField)
+    {
+        case "validPassword":
+            
+            password = randomStringGenerator(8)
+            break
+        case "invalidPassword":
+            moreChars = Math.random() < 0.5 // Determine with %50 probability, if password is going to be invalid because of having more than 20 or below 8 characters. If password is going to be 20+ characters.
+            if (moreChars == true){ // Determines the invalid password lenght to be below 8 or more then 20 chars.
+                passwordLength = Math.floor(Math.random() * 11) + 21; // Set length from 21 to 31
+            }
+            else{
+                passwordLength = Math.floor(Math.random() * 7) + 1; // Set length from 1 to 7
+            }
+            password = randomStringGenerator(passwordLength)
+            break
+        case "emptyPassword":
+            password = ""
+            break
+    }
+
+    pm.environment.set("email", email)
+    pm.environment.set("password", password)
+}
+
+function returnRandomItemFromArray(array)
+{
+    return array[Math.floor(Math.random() * array.length)];
+}
+
+function setFieldsInvalidRandomly(){ // Sets one of either fields invalid randomly. So when collection iterated more then one time each condution can be tested.
+    invalidEmailSituations = ["invalidEmail", "emptyEmail"]
+    invalidPasswordSituations = ["invalidPassword", "emptyPassword"]
+    invalidFields = [returnRandomItemFromArray(invalidEmailSituations), returnRandomItemFromArray(invalidPasswordSituations)]
+    pm.environment.set("invalidFields", invalidFields)
+    setRequestBody(invalidFields[0], invalidFields[1])
+}
+```
+
+Yukarıda bulunan kodlar ile Request ile gönderilecek body'de bulunan email ve password otomatize olarak rastgele olarak geçersiz veya boş olarak tanımlanmaktadır.
+![image](https://user-images.githubusercontent.com/13181041/149619295-ac1080ba-03ee-4030-8714-fea35abbe0d6.png)
+Yapılan 3. test olan Request Body Invalid testinde rastgele oluşturulup request gönderilen parametrelerin invalid/empty olup olmadığı görülebilmektedir. Senaryonun rastgele oluşturulması, Collection koşumu sırasında iterasyon sayısı ayarlanarak mümkün olan tüm geçersiz parametre testlerinin yapılmasını sağlamaktadır.
+
 # Sign Up Fail - Invalid Fields
 ![image](https://user-images.githubusercontent.com/13181041/149619152-ab6745c2-fb9b-423e-9b05-fff096029eea.png)
+
+Geçersiz alanların ayarlanması için Postmanda bulunan Pre-request Script kısmından yararlanılmıştır. 
+
+
+
 
 - Request Body Types are Valid
 ```javascript
