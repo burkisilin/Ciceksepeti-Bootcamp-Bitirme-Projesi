@@ -222,7 +222,7 @@ function setFieldsInvalidRandomly(){ // Sets one of either fields invalid random
 ```
 
 Yukarıda bulunan kodlar ile Request ile gönderilecek body'de bulunan email ve password otomatize olarak rastgele olarak geçersiz veya boş olarak tanımlanmaktadır.
-![image](https://user-images.githubusercontent.com/13181041/149619295-ac1080ba-03ee-4030-8714-fea35abbe0d6.png)
+![image](https://user-images.githubusercontent.com/13181041/149619373-a91de117-01d1-48a8-8a70-e8ea6075d58d.png)
 Yapılan 3. test olan Request Body Invalid testinde rastgele oluşturulup request gönderilen parametrelerin invalid/empty olup olmadığı görülebilmektedir. Senaryonun rastgele oluşturulması, Collection koşumu sırasında iterasyon sayısı ayarlanarak mümkün olan tüm geçersiz parametre testlerinin yapılmasını sağlamaktadır.
 
 # Sign Up Fail - Invalid Fields
