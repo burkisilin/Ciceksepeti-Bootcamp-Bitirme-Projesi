@@ -157,7 +157,57 @@ pm.test('Status Code is 401', () =>{
 ```
 Response kodunun 401 olup olmadığı kontrol edilmiştir. 
 
+# Sign Up Fail - Invalid Fields
+![image](https://user-images.githubusercontent.com/13181041/149619152-ab6745c2-fb9b-423e-9b05-fff096029eea.png)
 
+- Request Body Types are Valid
+```javascript
+pm.test("Request Body Types are Valid", () =>{
+    pm.expect(typeof(email) == "string").to.be.true;
+    pm.expect(typeof(password) == "string").to.be.true;
+});
+```
+
+- Response Body Types are Valid
+```javascript
+pm.test("Response Body Types are Valid", () =>{
+    pm.expect(typeof(jsonData.statusCode) == "number").to.be.true;
+    pm.expect(typeof(jsonData.message) == "object").to.be.true;
+    pm.expect(typeof(jsonData.error) == "string").to.be.true;
+});
+```
+
+- Request Body Invalid Field Errors Case
+```javascript
+pm.test("Request Body Invalid Field Errors Case: "+ invalidFieldsCase, () =>{
+    if (validateEmail(email) == false){
+        pm.expect(pm.response.text()).to.include("email must be an email")
+    }
+
+    if (email.length == 0){
+        pm.expect(pm.response.text()).to.include("mail should not be empty")
+    }
+
+    if (validatePassword == false){
+        pm.expect(pm.response.text()).to.include("password must be shorter than or equal to 20 characters")
+    }
+
+    if (password.length == 0){
+        pm.expect(pm.response.text()).to.include("password should not be empty")
+    }
+
+});
+```
+
+- Status Code is 400
+```javascript
+pm.test('Status Code is 400', () =>{
+    pm.expect(pm.response.code).equal(400,'Status received is ' + pm.response.code); // Respopnse code must be 400 due to Swagger API Documentation.
+});
+```
+
+```javascript
+```
 
 ```javascript
 ```
