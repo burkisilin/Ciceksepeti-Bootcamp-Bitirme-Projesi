@@ -226,7 +226,7 @@ function setFieldsInvalidRandomly(){ // Sets one of either fields invalid random
 Geçersiz alanların ayarlanması için Postmanda bulunan Pre-request Script kısmından yararlanılmıştır. 
 Yukarıda bulunan kodlar ile gönderilecek body'de bulunan email ve password otomatize şekilde rastgele olarak geçersiz veya boş olarak tanımlanmaktadır.
 ![image](https://user-images.githubusercontent.com/13181041/149619373-a91de117-01d1-48a8-8a70-e8ea6075d58d.png)
-Yapılan 3. test olan Request Body Invalid testinde rastgele oluşturulup request gönderilen parametrelerin invalid/empty olup olmadığı görülebilmektedir. Senaryonun rastgele oluşturulması, Collection koşumu sırasında iterasyon sayısı ayarlanarak mümkün olan tüm geçersiz parametre testlerinin yapılmasını sağlamaktadır.
+Yapılan 3. test olan "Request Body Invalid" testinde rastgele oluşturulup request gönderilen parametrelerin invalid/empty olup olmadığı görülebilmektedir. Senaryonun rastgele oluşturulması, Collection koşumu sırasında iterasyon sayısı ayarlanarak mümkün olan TÜM geçersiz parametre testlerinin yapılmasını sağlamaktadır.
 
 
 
