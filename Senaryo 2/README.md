@@ -240,6 +240,8 @@ pm.test("Request Body Types are Valid", () =>{
     pm.expect(typeof(password) == "string").to.be.true;
 });
 ```
+Request Body'de bulunan;
+email'in String cinsinden olup olmadığının kontrolü, password'un String cinsinden olup olmadığının kontrolü sağlanmıştır.
 
 - Response Body Types are Valid
 ```javascript
@@ -249,6 +251,10 @@ pm.test("Response Body Types are Valid", () =>{
     pm.expect(typeof(jsonData.error) == "string").to.be.true;
 });
 ```
+Response Body'de bulunan;
+statusCode'nin number cinsinden olup olmadığının kontrolü, 
+message'nin string cinsinden olup olmadığınının kontrolü,
+error'un string cinsinden olup olmadığınının kontrolü sağlanmıştır.
 
 - Request Body Invalid Field Errors Case
 ```javascript
@@ -268,9 +274,9 @@ pm.test("Request Body Invalid Field Errors Case: "+ invalidFieldsCase, () =>{
     if (password.length == 0){
         pm.expect(pm.response.text()).to.include("password should not be empty")
     }
-
 });
 ```
+Gönderilen geçersiz alanlara göre dönmesi beklenen hata mesajlarının testi yapılmıştır.
 
 - Status Code is 400
 ```javascript
@@ -278,7 +284,7 @@ pm.test('Status Code is 400', () =>{
     pm.expect(pm.response.code).equal(400,'Status received is ' + pm.response.code); // Respopnse code must be 400 due to Swagger API Documentation.
 });
 ```
-
+Response kodunun 400 olup olmadığı kontrol edilmiştir.
 ```javascript
 ```
 
