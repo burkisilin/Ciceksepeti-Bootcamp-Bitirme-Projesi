@@ -16,7 +16,7 @@ Projenin ayağa kalması için Postman ve aşağıdaki görselde paylaşılan En
 
 Pre-request Script üzerinde rastgele üretilen mail ve password değerleri Environment üzerine set edilir.
 
-- Response Body is Valid
+- Request Body is Valid
 ```javascript
 pm.test("Request Body is Valid", () =>{
     
@@ -70,21 +70,40 @@ pm.test("Request Body Types are Valid", () =>{
     pm.expect(typeof(password) == "string").to.be.true;
 });
 ```
+Request Body'de bulunan;
+
+email'in String cinsinden olup olmadığının kontrolü,
+password'un String cinsinden olup olmadığının kontrolü sağlanmıştır.
+
+
 - Response Body Types are Valid
 ```javascript
 pm.test("Response Body Types are Valid", () =>{
     pm.expect(typeof(jsonData.access_token) == "string").to.be.true
 });
 ```
+Response Body'de bulunan;
+
+access_token değerinin String cinsinden olup olmadığının kontrolü sağlanmıştır.
+
+
+
+
 - Signed In Successfully
 ```javascript
     pm.expect(pm.response.text()).to.include("access_token")
     pm.expect(jsonData.access_token.length).to.be.equal(175)
 });
 ```
+
+Response'de  "access_token" değerinin bulunup bulunmadığı ve access_token'in 175 karakterden oluşup oluşmadığı kontrol edilmiştir.
+
 - Status Code is 200
 ```javascript
 pm.test('Status Code is 200', () =>{
     pm.expect(pm.response.code).equal(200,'Status received is ' + pm.response.code + '. User successfully signed-up -> Response code must be 200 due to Swagger API Documentation. '); // user successfully signed-up -> Response code must be 200 due to Swagger API Documentation. 
 });
 ```
+
+Response kodunun 200 olup olmadığı kontrol edilmiştir. Swagger üzerinde belirtildiği üzere 200 kodu beklenirken 201 kodunun dönmesi üzerine test fail olmaktadır.
+
