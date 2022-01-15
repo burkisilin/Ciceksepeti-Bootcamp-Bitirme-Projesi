@@ -1,5 +1,7 @@
 # Burak Bayramoğlu Homework
 
+Projede kullanılan endpointlere bu linkten ulaşabilirsiniz : https://bootcampapi.techcs.io/api/fe/v1/#/
+
 # PROJE GEREKSİNİMLERİ
 
 Projenin ayağa kalması için Postman ve aşağıdaki görselde paylaşılan Environmente ihtiyaç duyulmaktadır. İndirdiğiniz Collection'u Postman'ın içerisine import ettikten sonra belirtilen Environment'ı içe aktararak aktif olarak seçmeniz gerekmektedir.
@@ -8,47 +10,36 @@ Projenin ayağa kalması için Postman ve aşağıdaki görselde paylaşılan En
 
 
 
-Testler
-- Response Code 200
 
-Yapılmış tüm yorumlar üzerinden;
-- Yorumlar listesinin büyüklüğünün 6
-- Name değerinin String
-- Comment değerinin String
-- Rating değerinin Number
-- createOn değerinin String
-- cityName değerinin String
-- Ve cityName değerinin Query Param ile eşitliği kontrol edilmiştir. Ankara ili için yapılan testte mock datada bulunan son yorumdaki cityName değeri Hatay olduğundan assertion fail olmaktadır.
+# Sign Up Success
+![image](https://user-images.githubusercontent.com/13181041/149616657-be020cfa-32cf-4159-9e7f-e2f796aa898b.png)
 
-# İstanbul İli İçin Yapılan Yorumlar Listesi
-![image](https://user-images.githubusercontent.com/13181041/147656197-8275f4cb-6249-4ab4-baf2-8f74c1aa169e.png)
 
 Testler
-- Response Code 200
+- Response Body is Valid
+![image](https://user-images.githubusercontent.com/13181041/149616692-91d2570f-0d52-4243-9e3c-2f1d8a6c6bb4.png)
 
-Yapılmış tüm yorumlar üzerinden;
-- Yorumlar listesinin büyüklüğünün 6
-- Name değerinin String
-- Comment değerinin String
-- Rating değerinin Number
-- createOn değerinin String
-- cityName değerinin String
-- Ve cityName değerinin Query Param ile eşitliği kontrol edilmiştir.
+Request Body'de bulunan;
 
-# 404 Not Found Testi (Van)
+email'in String cinsinden olup olmadığının kontrolü,
+password'un String cinsinden olup olmadığının kontrolü,
+validateEmail fonksiyonu ile email'in geçerli bir email olup olmadığının kontrolü sağlanmıştır.
 
-![image](https://user-images.githubusercontent.com/13181041/147656323-1dcb1df9-ef4b-4341-b82e-cdccc71b49b4.png)
 
-Testler
-- Response Code 404
-- Dönen body'deki message'nin "Not Found" stringine eşit olup olmadığı
 
-# 400 Null Param Testi
+- Signed Up Succesfully
+![image](https://user-images.githubusercontent.com/13181041/149616769-b2396364-991c-4e2d-b77c-ebb78d9fd808.png)
 
-![image](https://user-images.githubusercontent.com/13181041/147656574-fdf61e13-1dd3-4614-8cec-0f9fd46f57ab.png)
 
-Testler
-- Response Code 400
-- Dönen body'deki cityName'nin "'cityName' can not be null." stringine eşit olup olmadığı
+Response Body'de bulunan;
 
-kontrolleri sağlanmıştır.
+access_token değerinin String cinsinden olup olmadığının kontrolü,
+access_token değerinin 175 karakter içerip içermediğinin kontrolü sağlanmıştır.
+
+
+
+- Status Code is 200
+![image](https://user-images.githubusercontent.com/13181041/149616811-d009fceb-40ba-4a2b-a2ce-97edc7750eaa.png)
+Response kodunun 200 olup olmadığı kontrol edilmiştir. Swagger üzerinde belirtildiği üzere 200 kodu beklenirken 201 kodunun dönmesi üzerine test fail olmaktadır.
+
+
