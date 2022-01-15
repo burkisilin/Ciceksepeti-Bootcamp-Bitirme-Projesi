@@ -14,7 +14,7 @@ Projenin ayağa kalması için Postman ve aşağıdaki görselde paylaşılan En
 # Sign Up Success
 ![image](https://user-images.githubusercontent.com/13181041/149616657-be020cfa-32cf-4159-9e7f-e2f796aa898b.png)
 
-
+Pre-request Script üzerinde rastgele üretilen mail ve password değerleri Environment üzerine set edilir.
 
 - Response Body is Valid
 ```
@@ -57,4 +57,4 @@ pm.test('Status code', () =>{
 ```
 Response kodunun 200 olup olmadığı kontrol edilmiştir. Swagger üzerinde belirtildiği üzere 200 kodu beklenirken 201 kodunun dönmesi üzerine test fail olmaktadır.
 
-
+# Sign In Success
