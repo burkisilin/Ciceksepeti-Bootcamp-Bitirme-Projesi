@@ -111,7 +111,7 @@ Response kodunun 200 olup olmadığı kontrol edilmiştir. Swagger üzerinde bel
 ![image](https://user-images.githubusercontent.com/13181041/149618932-8f0ea5ad-108d-4a6b-b3a5-3b0dc7cc1622.png)
 
 Giriş bilgileri body üzerinden yanlış set edilmiştir. 
-```javascript
+```json
 {
   "email": "wrongMail",
   "password": "wrongPassword"
