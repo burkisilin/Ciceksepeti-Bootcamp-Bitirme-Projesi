@@ -83,7 +83,7 @@ pm.test("Response Body Types are Valid", () =>{
 });
 ```
 - Status Code is 200
-```
+```javascript
 pm.test('Status Code is 200', () =>{
     pm.expect(pm.response.code).equal(200,'Status received is ' + pm.response.code + '. User successfully signed-up -> Response code must be 200 due to Swagger API Documentation. '); // user successfully signed-up -> Response code must be 200 due to Swagger API Documentation. 
 });
