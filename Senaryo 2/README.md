@@ -241,7 +241,7 @@ pm.test("Request Body Types are Valid", () =>{
 });
 ```
 Request Body'de bulunan;
-email'in String cinsinden olup olmadığının kontrolü, password'un String cinsinden olup olmadığının kontrolü sağlanmıştır.
+email'in String cinsinden, password'un String cinsinden olup olmadığının kontrolü sağlanmıştır.
 
 - Response Body Types are Valid
 ```javascript
@@ -252,8 +252,8 @@ pm.test("Response Body Types are Valid", () =>{
 });
 ```
 Response Body'de bulunan;
-statusCode'nin number cinsinden olup olmadığının kontrolü, 
-message'nin string cinsinden olup olmadığınının kontrolü,
+statusCode'nin number cinsinden, 
+message'nin string cinsinden,
 error'un string cinsinden olup olmadığınının kontrolü sağlanmıştır.
 
 - Request Body Invalid Field Errors Case
