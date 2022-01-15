@@ -157,6 +157,9 @@ pm.test('Status Code is 401', () =>{
 ```
 Response kodunun 401 olup olmadığı kontrol edilmiştir. 
 
+# Sign Up Fail - Invalid Fields
+![image](https://user-images.githubusercontent.com/13181041/149619152-ab6745c2-fb9b-423e-9b05-fff096029eea.png)
+
 ```javascript
 function randomStringGenerator(length){
     var charset = 'abcdefghkmnpqrstuvwxyz23456789';
@@ -225,8 +228,7 @@ Yukarıda bulunan kodlar ile Request ile gönderilecek body'de bulunan email ve 
 ![image](https://user-images.githubusercontent.com/13181041/149619373-a91de117-01d1-48a8-8a70-e8ea6075d58d.png)
 Yapılan 3. test olan Request Body Invalid testinde rastgele oluşturulup request gönderilen parametrelerin invalid/empty olup olmadığı görülebilmektedir. Senaryonun rastgele oluşturulması, Collection koşumu sırasında iterasyon sayısı ayarlanarak mümkün olan tüm geçersiz parametre testlerinin yapılmasını sağlamaktadır.
 
-# Sign Up Fail - Invalid Fields
-![image](https://user-images.githubusercontent.com/13181041/149619152-ab6745c2-fb9b-423e-9b05-fff096029eea.png)
+
 
 Geçersiz alanların ayarlanması için Postmanda bulunan Pre-request Script kısmından yararlanılmıştır. 
 
