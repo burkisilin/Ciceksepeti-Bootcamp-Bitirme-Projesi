@@ -289,9 +289,11 @@ pm.test('Status Code is 400', () =>{
 Response kodunun 400 olup olmadığı kontrol edilmiştir.
 
 # Sign Up Fail - User Already Signed-Up
+![image](https://user-images.githubusercontent.com/13181041/149620007-53f15cb1-8fc7-42a1-9dfc-46995a70aae0.png)
+
 
 Daha önceden sisteme kayıtlı email adresi Pre-request Script kısmında aşağıdaki gibi ayarlanmıştır.
-```json
+```javascript
 pm.environment.set("email", "deneme@db.com")
 pm.environment.set("password", "12345678")
 ```
