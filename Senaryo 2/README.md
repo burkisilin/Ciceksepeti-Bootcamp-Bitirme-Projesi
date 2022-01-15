@@ -15,7 +15,7 @@ Projenin ayağa kalması için Postman ve aşağıdaki görselde paylaşılan En
 ![image](https://user-images.githubusercontent.com/13181041/149616657-be020cfa-32cf-4159-9e7f-e2f796aa898b.png)
 
 
-Testler
+
 - Response Body is Valid
 ```
 pm.test("Request Body is Valid", () =>{
