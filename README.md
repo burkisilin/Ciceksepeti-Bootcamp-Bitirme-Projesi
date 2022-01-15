@@ -16,4 +16,4 @@ Senaryo 1 testleri için tercih ettiğim yazılım dili Python oldu. Core Python
 
 - Signin ve signup endpointleri için entegrasyon testlerinin yazılması. 👍
 
-Entegrasyon testi için tercih ettiğim program Postman oldu. Bu tercihte bulunmamın sebebi sizler tarafından tarafımıza verilen ödevi Postman ile yapmış olmamız, Javascript ile ihtiyaç duyduğum kodu yazabiliyor olmam ve projeyi ayağa kaldırmanın başkaları adına daha kolay olacağını düşünmem oldu. 
+Entegrasyon testi için tercih ettiğim program Postman oldu. Bu tercihte bulunmamın sebebi sizler tarafından tarafımıza verilen ödevi Postman ile yapmış olmamız ve projeyi ayağa kaldırmanın başkaları adına daha kolay olacağını düşünmem oldu. 
