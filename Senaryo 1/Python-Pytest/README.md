@@ -42,8 +42,9 @@ Yapılan testlerde https://www.mizu.com/new-products-gourmet linkinin kırık ol
 
 
 
-# RAPORLAMA
-PyTest lokal raporlama açısından 
+# ALLURE RAPORLAMA
+
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/13181041/149825491-259b78ee-9bbf-434a-8285-8ed21cb635a1.gif)
 
 - Allure
 - https://github.com/allure-framework/allure2/releases allure indirilir ve sistem değişkenlerine tanımlanır.
