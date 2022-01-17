@@ -44,7 +44,8 @@ Yapılan testlerde https://www.mizu.com/new-products-gourmet linkinin kırık ol
 
 # ALLURE RAPORLAMA
 
-![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/13181041/149825491-259b78ee-9bbf-434a-8285-8ed21cb635a1.gif)
+![ezgif com-gif-maker (2)](https://user-images.githubusercontent.com/13181041/149825587-336b847c-72f6-4d81-906b-e579e0e9d59c.gif)
+
 
 - Allure
 - https://github.com/allure-framework/allure2/releases allure indirilir ve sistem değişkenlerine tanımlanır.
