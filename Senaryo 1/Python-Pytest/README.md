@@ -17,13 +17,13 @@ py.test --html=report.html --capture=tee-sys
 
 # TEST EDİLEN SENARYOLAR #
 
-- https://www.mizu.com/flowers ‘da aşağı scroll yaptıkça ilk 10 sayfa için her sayfada 60 ürün geldiğinin kontrolü.\ \
+- https://www.mizu.com/flowers ‘da aşağı scroll yaptıkça ilk 10 sayfa için her sayfada 60 ürün geldiğinin kontrolü.\
 https://www.mizu.com/flowers adresine gidilir ve her sayfanın sonunda bulunan elemana scroll edilerek responsive load triggerlanır. 10 sayfanın tamamı yüklenene kadar bu işlem tekrarlanır. 10 sayfanın yüklenmesinin ardından sayfada görüntülenebiliyor olması beklenen 600. ürünün sayfada mevcut olup olmadığı assert edilir.
 
-- https://www.mizu.com/flowers sayfasında filtre alanından sort: price high to low seçilip listeleme sayfasındaki ürünlerin doğru fiyat sırasıyla listelendiğinin kontrolü.\\
+- https://www.mizu.com/flowers sayfasında filtre alanından sort: price high to low seçilip listeleme sayfasındaki ürünlerin doğru fiyat sırasıyla listelendiğinin kontrolü.\
 https://www.mizu.com/flowers adresine gidilir ve istenilen filtreleme seçeneği seçilir. Her sayfanın sonunda bulunan elemana scroll edilerek responsive load triggerlanır. Bu işlem tüm sayfalar yüklenene kadar tekrarlanır. Tüm sayfaların yüklenmesinin ardından tüm ürünlerin fiyatları sıra ile bir liste içerisine çekilir. Liste içerisinde iterasyon yaparak tüm ürünlerin fiyatları sırası ile birbiri ile ">=" operatörü kullanılarak kıyaslanır. Sıralamada bir sorun bulunması durumunda iterasyon "Break" komutu ile bölünür ve False assertion gerçekleştirilir.
 
-- https://www.mizu.com menü altında bulunan tüm alt kategorilerin linklerinin kırık olup olmadığının kontrolü.\\
+- https://www.mizu.com menü altında bulunan tüm alt kategorilerin linklerinin kırık olup olmadığının kontrolü.\
 Anasayfada beliren popup'un kapatılmasının ardından tüm menü butonlarının üzerinde hover işlemi gerçekleştirilir. Böylece dinamik menü yüklenmesi tetiklenerek menü altındaki bütün linkler Selenium tarafından çekilebilir duruma getirilir. Çekilen linkler üzerinde iterasyon yapılarak link kırıklığını kontrol etmek üzere iki seçenekten birisi tercih edilebilir.
 
 ```Python
