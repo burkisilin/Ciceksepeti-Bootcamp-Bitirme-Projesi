@@ -43,9 +43,9 @@ Yapılan testlerde https://www.mizu.com/new-products-gourmet linkinin kırık ol
 
 
 # ALLURE RAPORLAMA
-
+<p align="center">
 ![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/13181041/149825670-a88dbeb4-d4fc-4e75-9965-6a2221302967.gif)
-
+</p>
 
 
 - Allure
