@@ -58,7 +58,7 @@ pip install allure-pytest
 py.test --alluredir="pathToAllureReportsFolder"
 ```
 
-- Son olarak raporları görüntülemek için aşağıdaki komut çalıştırılır.
+- Son olarak raporları görüntülemek için aşağıdaki komut, komut istemcisi üzerinden çalıştırılır.
 ```
 allure serve pathToAllureReportsFolder
 ```
