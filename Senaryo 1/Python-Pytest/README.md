@@ -3,7 +3,7 @@
 Projenin ayağa kaldırılması için öncelikle Python ve gerekli paketlerin kurulması gerekmektedir. Aşağıda bulunan kodu çalıştırarak gerekli paketlerin kurulumunu otomatik olarak gerçekleştirebilirsiniz.
 
 ```
-$ pip install -r /path/to/requirements.txt
+pip install -r /path/to/requirements.txt
 ```
 
 
@@ -50,7 +50,17 @@ Yapılan testlerde https://www.mizu.com/new-products-gourmet linkinin kırık ol
 - https://github.com/allure-framework/allure2/releases allure indirilir ve sistem değişkenlerine tanımlanır. Ayrıca Python için gerekli paketler pip üzerinden aşağıdaki komut ile indirilir 
 
 ```
-$ pip install allure-pytest
+pip install allure-pytest
+```
+
+- Aşağıda belirtilen komut, komut istemcisi üzerinde çalıştırılarak test koşulur.
+```
+py.test --alluredir="pathToAllureReportsFolder"
+```
+
+- Son olarak raporları görüntülemek için aşağıdaki komut çalıştırılır.
+```
+allure serve pathToAllureReportsFolder
 ```
 
 ![image](https://user-images.githubusercontent.com/13181041/149817712-a4eea80b-cd97-46fa-a7a6-11f3ee10dab7.png)
