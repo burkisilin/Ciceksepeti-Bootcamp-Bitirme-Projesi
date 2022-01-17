@@ -36,7 +36,7 @@ helpers.checkPageValidation(by="By.ResponseCode", validate=200, link=link)
 ```
 - Linklerin hepsine request atılarak status kodunun 200 olup olmadığı kontrol edilir.
 
-Yapılan testlerde https://www.mizu.com/new-products-gourmet linkinin kırık olduğu tespit edilmiştir. Bu durum raporlama üzerinde ve Utils/helpers.py dosyası içerisinde bulunan "save_screenshot" fonksiyonu çağırılarak ./screenshots/"tarih"/ klasörüne kaydedilir.\
+Yapılan testlerde https://www.mizu.com/new-products-gourmet linkinin kırık olduğu tespit edilmiştir. Bu durum raporlama üzerinde ve Utils/helpers.py dosyası içerisinde bulunan "save_screenshot" fonksiyonu çağırılarak ./screenshots/"tarih"/ klasörüne kaydedilir.
 
 ![image](https://user-images.githubusercontent.com/13181041/149820940-17b77b55-e0ca-459e-812f-fc58b135c364.png)
 
