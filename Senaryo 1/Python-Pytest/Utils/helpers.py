@@ -54,7 +54,7 @@ class Helpers:
             os.makedirs(f'./screenshot/{date_string}')
 
         self.driver.save_screenshot(f"./screenshot/{date_string}/{time_string}&{filename}.png")
-
+        return(print(f"Screenshot saved as: ./screenshot/{date_string}/{time_string}&{filename}.png"))
 
     def getText(self, method, selector):  # Returns text content of element.
         return eval(f'self.driver.find_element_by_{method}("{selector}").get_attribute("textContent")')

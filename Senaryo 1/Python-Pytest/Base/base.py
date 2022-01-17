@@ -1,5 +1,3 @@
-from datetime import datetime, time
-
 import pytest
 from selenium import webdriver
 
