@@ -16,7 +16,7 @@ py.test --capture=tee-sys
 
 
 # TEST EDİLEN SENARYOLAR #
-Proje içerisinde tüm kodumu detaylı bir biçimde yorum satırları ile açıklamaya çalıştım. Koşulan test senaryolarında izlenen adımlardan hızlıca bahsedecek olursak;
+Proje içerisinde tüm kodumu detaylı bir biçimde yorum satırları ile açıklamaya çalıştım. Koşulan test senaryolarında izlenen adımlardan kısaca bahsedecek olursak;
 
 - https://www.mizu.com/flowers ‘da aşağı scroll yaptıkça ilk 10 sayfa için her sayfada 60 ürün geldiğinin kontrolü.\
 https://www.mizu.com/flowers adresine gidilir ve her sayfanın sonunda bulunan elemana scroll edilerek responsive load triggerlanır. 10 sayfanın tamamı yüklenene kadar bu işlem tekrarlanır. 10 sayfanın yüklenmesinin ardından sayfada görüntülenebiliyor olması beklenen 600. ürünün sayfada mevcut olup olmadığı assert edilir.
