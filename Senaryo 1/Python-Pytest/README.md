@@ -10,7 +10,7 @@ pip install -r /path/to/requirements.txt
 
 Projenin bulunduğu dizinde CMD üzerinden aşağıda bulunan kodu çalıştırarak testleri koşmaya başlayabilirsiniz.\
 ```
-py.test --html=report.html --capture=tee-sys
+py.test --capture=tee-sys
 ```
 
 
@@ -40,7 +40,7 @@ Yapılan testlerde https://www.mizu.com/new-products-gourmet linkinin kırık ol
 
 ![image](https://user-images.githubusercontent.com/13181041/149820940-17b77b55-e0ca-459e-812f-fc58b135c364.png)
 
-
+Tüm kodumu detaylı bir biçimde proje içerisinde yorum satırları ile açıklamaya çalıştım.
 
 # ALLURE RAPORLAMA
 <p align="center">
@@ -63,5 +63,11 @@ py.test --alluredir="pathToAllureReportsFolder"
 allure serve pathToAllureReportsFolder
 ```
 
+# HTML RAPORLAMA
+Test koşum raporlarımızı görüntülememizin bir diğer yolu PyTest HTML raporlama. Aşağıdaki komutu, komut istemcisi üzerinden çalıştırarak kolayca testlerimize ait bir HTML rapor sayfası oluşturabiliriz.
+
+```
+py.test --html=reportFileName.html --capture=tee-sys
+```
 ![image](https://user-images.githubusercontent.com/13181041/149817712-a4eea80b-cd97-46fa-a7a6-11f3ee10dab7.png)
 
