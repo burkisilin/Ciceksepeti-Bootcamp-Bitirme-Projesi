@@ -17,7 +17,7 @@ py.test --html=report.html --capture=tee-sys
 
 # TEST EDİLEN SENARYOLAR #
 
-- https://www.mizu.com/flowers ‘da aşağı scroll yaptıkça ilk 10 sayfa için her sayfada 60 ürün geldiğinin kontrolü.\\
+- https://www.mizu.com/flowers ‘da aşağı scroll yaptıkça ilk 10 sayfa için her sayfada 60 ürün geldiğinin kontrolü.\ \
 https://www.mizu.com/flowers adresine gidilir ve her sayfanın sonunda bulunan elemana scroll edilerek responsive load triggerlanır. 10 sayfanın tamamı yüklenene kadar bu işlem tekrarlanır. 10 sayfanın yüklenmesinin ardından sayfada görüntülenebiliyor olması beklenen 600. ürünün sayfada mevcut olup olmadığı assert edilir.
 
 - https://www.mizu.com/flowers sayfasında filtre alanından sort: price high to low seçilip listeleme sayfasındaki ürünlerin doğru fiyat sırasıyla listelendiğinin kontrolü.\\
