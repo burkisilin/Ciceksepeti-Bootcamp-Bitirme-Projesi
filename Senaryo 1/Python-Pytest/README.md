@@ -16,6 +16,7 @@ py.test --capture=tee-sys
 
 
 # TEST EDİLEN SENARYOLAR #
+Tüm kodumu detaylı bir biçimde proje içerisinde yorum satırları ile açıklamaya çalıştım. Koşulan test senaryolarında izlenen adımlardan hızlıca bahsedecek olursak;
 
 - https://www.mizu.com/flowers ‘da aşağı scroll yaptıkça ilk 10 sayfa için her sayfada 60 ürün geldiğinin kontrolü.\
 https://www.mizu.com/flowers adresine gidilir ve her sayfanın sonunda bulunan elemana scroll edilerek responsive load triggerlanır. 10 sayfanın tamamı yüklenene kadar bu işlem tekrarlanır. 10 sayfanın yüklenmesinin ardından sayfada görüntülenebiliyor olması beklenen 600. ürünün sayfada mevcut olup olmadığı assert edilir.
@@ -40,7 +41,7 @@ Yapılan testlerde https://www.mizu.com/new-products-gourmet linkinin kırık ol
 
 ![image](https://user-images.githubusercontent.com/13181041/149820940-17b77b55-e0ca-459e-812f-fc58b135c364.png)
 
-Tüm kodumu detaylı bir biçimde proje içerisinde yorum satırları ile açıklamaya çalıştım.
+
 
 # ALLURE RAPORLAMA
 <p align="center">
