@@ -43,5 +43,10 @@ Yapılan testlerde https://www.mizu.com/new-products-gourmet linkinin kırık ol
 
 
 # RAPORLAMA
+PyTest lokal raporlama açısından 
+
+- Allure
+- https://github.com/allure-framework/allure2/releases
+
 ![image](https://user-images.githubusercontent.com/13181041/149817712-a4eea80b-cd97-46fa-a7a6-11f3ee10dab7.png)
 
