@@ -17,10 +17,13 @@ Sistemin yük altında çalışırken çökme sonucu dönen response kodunun "20
 - Response Duration < 500 MS
 Yük altında sunucunun cevap süresinin ne kadar değişkenlik gösterdiği gözlemlenmek üzere response duration assertinları yapılmıştır.
 
+5 istemci ile 10 tekrar yapılarak aşağıdaki test sonuçları elde edilmiştir.
 
-20 istemci ile 20 tekrar yapılarak aşağıdaki test sonuçları elde edilmiştir.
+![image](https://user-images.githubusercontent.com/13181041/149926208-6f362bab-daa5-4844-bf70-bb77652a0c55.png)
 
-1200 istekten, cevap süresi testine göre en yüksek hata olasılığına sahip isteğin "/Suggest/Get" endpointi olduğu gözlemlenmiştir. Aşağıdaki grafikten 
 
-![image](https://user-images.githubusercontent.com/13181041/149920376-44fa685e-766c-4f1e-946f-35b62efebc09.png)
+20 istemci ile 10 tekrar yapılarak aşağıdaki test sonuçları elde edilmiştir.
 
+![image](https://user-images.githubusercontent.com/13181041/149926364-bf65f787-a378-4437-9ddb-7f25815f2233.png)
+
+İstemci sayısının 
