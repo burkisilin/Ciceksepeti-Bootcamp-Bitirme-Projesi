@@ -304,7 +304,8 @@ Response kodunun 400 olup olmadığı kontrol edilmiştir.
 
 
 
-```var counter = parseInt(pm.environment.get("counter"))
+```javascript
+var counter = parseInt(pm.environment.get("counter"))
 if (password.length == 0) {
     counter += 1
     pm.environment.set("counter", counter)
