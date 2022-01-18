@@ -302,6 +302,24 @@ pm.test('Status Code is 400', () =>{
 ```
 Response kodunun 400 olup olmadığı kontrol edilmiştir.
 
+
+
+```var counter = parseInt(pm.environment.get("counter"))
+if (password.length == 0) {
+    counter += 1
+    pm.environment.set("counter", counter)
+}
+if (counter < 2){
+    postman.setNextRequest("Sign Up Fail - Invalid Fields");
+} 
+else {
+    
+        pm.environment.set("counter", 0)
+}
+```
+
+Yukarıda belirtilen kod bloğu sayesinde tüm "Invalid Field" senaryoları tek bir request üzerinden aynı requesti farklı parametreler ile çağırarak yönetilmiştir.
+
 # Sign Up Fail - User Already Signed-Up
 ![image](https://user-images.githubusercontent.com/13181041/149620007-53f15cb1-8fc7-42a1-9dfc-46995a70aae0.png)
 
