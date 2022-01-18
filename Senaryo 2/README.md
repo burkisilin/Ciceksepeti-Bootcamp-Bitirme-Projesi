@@ -237,7 +237,7 @@ pm.environment.set("invalidFields", currentEmailCondition + ", "+ currentPasswor
 
 ```
 Geçersiz alanların ayarlanması için Postmanda bulunan Pre-request Script kısmından yararlanılmıştır. 
-Yukarıda bulunan kodlar ile gönderilecek body'de bulunan email ve password otomatize şekilde rastgele olarak geçersiz veya boş olarak tanımlanmaktadır.
+Yukarıda bulunan kodlar ile gönderilecek body'de bulunan email ve password otomatize şekilde geçersiz veya boş olarak tanımlanmaktadır.
 ![image](https://user-images.githubusercontent.com/13181041/149619373-a91de117-01d1-48a8-8a70-e8ea6075d58d.png)
 Requestin yapılan 3. testi olan "Request Body Invalid Field Errors" testinde rastgele oluşturulup request gönderilen parametrelerin invalid/empty olup olmadığı görülebilmektedir. Tüm geçersiz.Senaryonun rastgele oluşturulması, Collection koşumu sırasında mümkün olan TÜM geçersiz parametre testlerinin yapılmasını sağlamaktadır.
 
