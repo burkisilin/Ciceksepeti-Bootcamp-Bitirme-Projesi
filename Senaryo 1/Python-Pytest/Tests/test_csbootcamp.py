@@ -11,6 +11,7 @@ from Utils.helpers import *
 @pytest.mark.usefixtures('set_up')
 class Test_csbootcamp(Base):
 
+
     def test_responsiveload(self):
         driver = self.driver
         productsPage = ProductsPage(driver)
@@ -25,6 +26,7 @@ class Test_csbootcamp(Base):
             assert True
         else:
             helpers.save_screenshot("responsive_load_test")
+            assert False
 
     def test_sort_filtering(self):
         driver = self.driver
@@ -32,10 +34,11 @@ class Test_csbootcamp(Base):
         helpers = Helpers(driver)
         driver.get("https://www.mizu.com/flowers")
 
-        if productsPage.checkIfSortedCorrectly("Price: High to Low","MX$"):  # Function takes Sorting Type and Currency as argument. Returns True or False.
+        if productsPage.checkIfSortedCorrectly("Price: High to Low", "MX$"):  # Function takes Sorting Type and Currency as argument. Returns True or False.
             assert True
         else:
             helpers.save_screenshot("filtering_test")
+            assert False
 
     def test_check_menu_links(self):
         driver = self.driver
