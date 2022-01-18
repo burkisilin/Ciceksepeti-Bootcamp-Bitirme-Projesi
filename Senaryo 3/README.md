@@ -14,16 +14,17 @@ Yukarıda belirtilen requestler ile ilgili yük durumunda değişkenlik gösteri
 - Response Message = OK
 Sistemin yük altında çalışırken çökme sonucu dönen response kodunun "200" ve response mesajının "OK" olmayabileceği düşünülerek ve
 
-- Response Duration < 500 MS
+- Response Duration < 700 MS
 Yük altında sunucunun cevap süresinin ne kadar değişkenlik gösterdiği gözlemlenmek üzere response duration assertinları yapılmıştır.
 
-5 istemci ile 10 tekrar yapılarak aşağıdaki test sonuçları elde edilmiştir.
+10 istemci ile 10 tekrar yapılarak aşağıdaki test sonuçları elde edilmiştir.
 
-![image](https://user-images.githubusercontent.com/13181041/149926208-6f362bab-daa5-4844-bf70-bb77652a0c55.png)
+![image](https://user-images.githubusercontent.com/13181041/149926920-82de5832-813c-411f-a5ac-1a8f5d925b34.png)
 
 
-20 istemci ile 10 tekrar yapılarak aşağıdaki test sonuçları elde edilmiştir.
 
-![image](https://user-images.githubusercontent.com/13181041/149926364-bf65f787-a378-4437-9ddb-7f25815f2233.png)
+20 istemci ile 5 tekrar yapılarak aşağıdaki test sonuçları elde edilmiştir.
+
+![image](https://user-images.githubusercontent.com/13181041/149927000-cacc2ab9-e4e9-4491-bd9a-0b1d4c861c54.png)
 
 İstemci sayısının 
