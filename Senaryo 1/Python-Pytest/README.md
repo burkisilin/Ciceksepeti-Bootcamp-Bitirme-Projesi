@@ -8,7 +8,7 @@ pip install -r /path/to/requirements.txt
 
 ./Base/base.py dosyasında bulunan driver executable path'i eğer driveriniz sistem ortam değişkenlerinde değil ise set etmeniz gerekmektedir.
 ```python
-        self.driver = webdriver.Chrome(executable_path= "./PathTo/chromedriver.exe")
+self.driver = webdriver.Chrome(executable_path= "./PathTo/chromedriver.exe")
 ```
 
 
