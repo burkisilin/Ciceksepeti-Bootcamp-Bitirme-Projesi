@@ -1,5 +1,5 @@
 # Test Automation Bootcamp API Entegrasyon Testleri!
-[image](https://user-images.githubusercontent.com/13181041/149951074-e9759bc2-5021-416a-a2a0-c346b098bca3.png)
+![image](https://user-images.githubusercontent.com/13181041/149951074-e9759bc2-5021-416a-a2a0-c346b098bca3.png)
 
 
 Projede kullanılan endpointlere bu linkten ulaşabilirsiniz : https://bootcampapi.techcs.io/api/fe/v1/#/
@@ -8,7 +8,8 @@ Projede kullanılan endpointlere bu linkten ulaşabilirsiniz : https://bootcampa
 
 Projenin ayağa kalması için Postman ve aşağıdaki görselde paylaşılan Environmente ihtiyaç duyulmaktadır. İndirdiğiniz Collection'u Postman'ın içerisine import ettikten sonra belirtilen Environment'ı içe aktararak aktif olarak seçmeniz gerekmektedir.
 
-![image](https://user-images.githubusercontent.com/13181041/149616456-e64d9f8d-4834-40dd-be23-5900c37a10d6.png)
+![image](https://user-images.githubusercontent.com/13181041/149951413-c394c259-7a07-4403-af20-ed3f052d41ab.png)
+
 
 
 
@@ -212,25 +213,36 @@ function setRequestBody(emailField,passwordField)
     pm.environment.set("password", password)
 }
 
-function returnRandomItemFromArray(array)
-{
-    return array[Math.floor(Math.random() * array.length)];
+// Code Down Below Generates All Invalid 4 Scenarios
+
+EmailConditions = ["invalidEmail", "emptyEmail"];
+//PasswordConditions = ["invalidPassword", "emptyPassword"];
+
+var counter = parseInt(pm.environment.get("counter"))
+
+currentEmailCondition = EmailConditions[counter]
+
+
+let PasswordConditions = pm.collectionVariables.get("PasswordConditions"); 
+if(!PasswordConditions || PasswordConditions.length == 0) {
+    PasswordConditions = ["invalidPassword", "emptyPassword"];
 }
 
-function setFieldsInvalidRandomly(){ // Sets one of either fields invalid randomly. So when collection iterated more then one time each condution can be tested.
-    invalidEmailSituations = ["invalidEmail", "emptyEmail"]
-    invalidPasswordSituations = ["invalidPassword", "emptyPassword"]
-    invalidFields = [returnRandomItemFromArray(invalidEmailSituations), returnRandomItemFromArray(invalidPasswordSituations)]
-    pm.environment.set("invalidFields", invalidFields)
-    setRequestBody(invalidFields[0], invalidFields[1])
-}
+let currentPasswordCondition = PasswordConditions.shift();
+pm.collectionVariables.set("PasswordCondition", currentPasswordCondition)
+pm.collectionVariables.set("PasswordConditions", PasswordConditions)
+
+setRequestBody(currentEmailCondition, currentPasswordCondition);
+pm.environment.set("invalidFields", currentEmailCondition + ", "+ currentPasswordCondition);
+
 ```
 Geçersiz alanların ayarlanması için Postmanda bulunan Pre-request Script kısmından yararlanılmıştır. 
 Yukarıda bulunan kodlar ile gönderilecek body'de bulunan email ve password otomatize şekilde rastgele olarak geçersiz veya boş olarak tanımlanmaktadır.
 ![image](https://user-images.githubusercontent.com/13181041/149619373-a91de117-01d1-48a8-8a70-e8ea6075d58d.png)
-Yapılan 3. test olan "Request Body Invalid" testinde rastgele oluşturulup request gönderilen parametrelerin invalid/empty olup olmadığı görülebilmektedir. Senaryonun rastgele oluşturulması, Collection koşumu sırasında iterasyon sayısı ayarlanarak mümkün olan TÜM geçersiz parametre testlerinin yapılmasını sağlamaktadır.
+Requestin yapılan 3. testi olan "Request Body Invalid Field Errors" testinde rastgele oluşturulup request gönderilen parametrelerin invalid/empty olup olmadığı görülebilmektedir. Tüm geçersiz.Senaryonun rastgele oluşturulması, Collection koşumu sırasında mümkün olan TÜM geçersiz parametre testlerinin yapılmasını sağlamaktadır.
 
 
+![image](https://user-images.githubusercontent.com/13181041/149952051-5eb1b2bc-24f5-4f1d-9c27-4af0cbbbb1ac.png)
 
 
 
