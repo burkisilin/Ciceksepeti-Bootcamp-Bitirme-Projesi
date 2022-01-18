@@ -27,4 +27,7 @@ Yük altında sunucunun cevap süresinin ne kadar değişkenlik gösterdiği gö
 
 ![image](https://user-images.githubusercontent.com/13181041/149927000-cacc2ab9-e4e9-4491-bd9a-0b1d4c861c54.png)
 
-İstemci sayısının 
+
+
+![image](https://user-images.githubusercontent.com/13181041/149927266-9ffe007e-2a6f-44ff-98c3-babcf3d92d59.png)
+Yapılan testler ile istemci sayısının sunucunun cevap süresine etkisi gözlemlenebilmektedir. 
