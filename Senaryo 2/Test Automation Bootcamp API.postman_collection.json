@@ -341,27 +341,36 @@
 							"    pm.environment.set(\"password\", password)\r",
 							"}\r",
 							"\r",
-							"function returnRandomItemFromArray(array)\r",
-							"{\r",
-							"    return array[Math.floor(Math.random() * array.length)];\r",
+							"\r",
+							"\r",
+							"\r",
+							"// Code Down Below Generates All Invalid 4 Scenarios\r",
+							"\r",
+							"\r",
+							"EmailConditions = [\"invalidEmail\", \"emptyEmail\"];\r",
+							"//PasswordConditions = [\"invalidPassword\", \"emptyPassword\"];\r",
+							"\r",
+							"var counter = parseInt(pm.environment.get(\"counter\"))\r",
+							"\r",
+							"currentEmailCondition = EmailConditions[counter]\r",
+							"\r",
+							"\r",
+							"let PasswordConditions = pm.collectionVariables.get(\"PasswordConditions\"); \r",
+							"if(!PasswordConditions || PasswordConditions.length == 0) {\r",
+							"    PasswordConditions = [\"invalidPassword\", \"emptyPassword\"];\r",
 							"}\r",
 							"\r",
-							"function setFieldsInvalidRandomly(){ // Sets one of either fields invalid randomly. So when collection iterated more then one time each condution can be tested.\r",
-							"    invalidEmailSituations = [\"invalidEmail\", \"emptyEmail\"]\r",
-							"    invalidPasswordSituations = [\"invalidPassword\", \"emptyPassword\"]\r",
-							"    invalidFields = [returnRandomItemFromArray(invalidEmailSituations), returnRandomItemFromArray(invalidPasswordSituations)]\r",
-							"    pm.environment.set(\"invalidFields\", invalidFields)\r",
-							"    setRequestBody(invalidFields[0], invalidFields[1])\r",
-							"}\r",
+							"let currentPasswordCondition = PasswordConditions.shift();\r",
+							"pm.collectionVariables.set(\"PasswordCondition\", currentPasswordCondition)\r",
+							"pm.collectionVariables.set(\"PasswordConditions\", PasswordConditions)\r",
 							"\r",
 							"\r",
-							"//Uncomment line 66 to choose field failure scenarios manually and comment line 68\r",
 							"\r",
-							"//setRequestBody(\"emptyEmail\",\"invalidPassword\") // Function can take following arguments : [\"validEmail\", \"invalidEmail\", \"emptyEmail\"], [\"validPassword\", \"invalidPassword\", \"emptyPassword\"]\r",
+							"setRequestBody(currentEmailCondition, currentPasswordCondition);\r",
+							"pm.environment.set(\"invalidFields\", currentEmailCondition + \", \"+ currentPasswordCondition);\r",
 							"\r",
-							"setFieldsInvalidRandomly()\r",
 							"\r",
-							"//For this case either one or both of the fields must be invalid/empty. \r",
+							"\r",
 							"\r",
 							""
 						],
@@ -429,7 +438,29 @@
 							"\r",
 							"pm.test('Status Code is 400', () =>{\r",
 							"    pm.expect(pm.response.code).equal(400,'Status received is ' + pm.response.code); // Respopnse code must be 400 due to Swagger API Documentation.\r",
-							"});"
+							"});\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"var counter = parseInt(pm.environment.get(\"counter\"))\r",
+							"if (password.length == 0) {\r",
+							"    counter += 1\r",
+							"    pm.environment.set(\"counter\", counter)\r",
+							"}\r",
+							"if (counter < 2){\r",
+							"    postman.setNextRequest(\"Sign Up Fail - Invalid Fields\");\r",
+							"} \r",
+							"else {\r",
+							"    \r",
+							"        pm.environment.set(\"counter\", 0)\r",
+							"}\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							"\r",
+							""
 						],
 						"type": "text/javascript"
 					}
@@ -553,6 +584,52 @@
 				}
 			},
 			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "username",
+			"value": ""
+		},
+		{
+			"key": "usernames",
+			"value": ""
+		},
+		{
+			"key": "password",
+			"value": ""
+		},
+		{
+			"key": "passwords",
+			"value": ""
+		},
+		{
+			"key": "Condutions",
+			"value": ""
+		},
+		{
+			"key": "currentEmailCondition",
+			"value": ""
+		},
+		{
+			"key": "currentPasswordCondition",
+			"value": ""
+		},
+		{
+			"key": "EmailCondition",
+			"value": ""
+		},
+		{
+			"key": "EmailConditions",
+			"value": ""
+		},
+		{
+			"key": "PasswordCondition",
+			"value": ""
+		},
+		{
+			"key": "PasswordConditions",
+			"value": ""
 		}
 	]
 }
