@@ -17,3 +17,7 @@ Senaryo 1 testleri için tercih ettiğim yazılım dili Python oldu. Core Python
 - Signin ve signup endpointleri için entegrasyon testlerinin yazılması. 👍
 
 Entegrasyon testi için tercih ettiğim program Postman oldu. Bu tercihte bulunmamın sebebi sizler tarafından tarafımıza verilen ödevi Postman ile yapmış olmamız ve projeyi ayağa kaldırmanın başkaları adına daha kolay olacağını düşünmem oldu. 
+
+# Senaryo 3
+
+- JMeter ile https://www.cicek.com Search modülü ve arama sonrası için yük testi ve ilgili senaryoların yazılması. 🤞
