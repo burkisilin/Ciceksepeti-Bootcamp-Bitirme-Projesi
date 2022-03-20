@@ -1,4 +1,32 @@
-# Çiçeksepeti Bootcamp Bitirme Projesi
+# Çiçeksepeti Test Automation Bootcamp Final Project
+
+# EN
+
+# Scenario 1
+
+- Extraction of manual test cases for the https://www.mizu.com/login page. 👌
+
+- Checking the responsive item loading by checking if it can bring 60 products for the first 10 pages as you scroll down on https://www.mizu.com/flowers. ✌️
+
+- Checking the Sorting algorithm at https://www.mizu.com/flowers using sort from  filter field as price listing from high to low, checking that the right price is listed for you. 🤏
+
+- Frames of all subframe links available under https://www.mizu.com menu. 🤙
+
+Scenario 1 The programming language of choice for engineering was Python. The fact that I was trained in Core Python and had two trainings were the ones who did not make this choice. I want to come together nicely when I'm about to be created with a language that I can build better than itself. The preferred testing framework was PyTest. The biggest reason for making this choice was because BootCamp taught so.
+
+# Scenario 2
+
+- Writing tests and for signin-up membership endpoints. 👍
+
+The program of choice for integration testing was Postman.
+
+# Scenario 3
+
+- With JMeter https://www.cicek.com Load test and writing related scenarios for search detail and post search. 🤞
+
+
+
+# TR
 
 # Senaryo 1
 
