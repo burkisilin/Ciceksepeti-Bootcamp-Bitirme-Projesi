@@ -4,7 +4,7 @@
 
 # Scenario 1
 
-- Extraction of manual test cases for the https://www.mizu.com/login page. 👌
+- Writing of manual test cases for the https://www.mizu.com/login page. 👌
 
 - Checking the responsive item loading by checking if it can bring 60 products for the first 10 pages as you scroll down on https://www.mizu.com/flowers. ✌️
 
