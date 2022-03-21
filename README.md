@@ -12,7 +12,7 @@
 
 - Frames of all subframe links available under https://www.mizu.com menu. 🤙
 
-Scenario 1 The programming language of choice for engineering was Python. The fact that I was trained in Core Python and had two trainings were the ones who did not make this choice. I want to come together nicely when I'm about to be created with a language that I can build better than itself. The preferred testing framework was PyTest. The biggest reason for making this choice was because BootCamp taught so.
+For Scenario 1, the programming language of choice I have made was Python. The fact that I was trained in Core Python and had two trainings were the ones who did not make this choice. I want to come together nicely when I'm about to be created with a language that I can build better than itself. The preferred testing framework was PyTest. The biggest reason for making this choice was because BootCamp taught so.
 
 # Scenario 2
 
